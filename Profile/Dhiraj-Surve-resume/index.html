@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhiraj Rajkumar Surve - Database Developer & Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #4a4a4a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e5e5e5;
+            --bg: #ffffff;
+            --bg-subtle: #fafafa;
+            --text-primary: #0a0a0a;
+            --text-secondary: #525252;
+            --text-muted: #737373;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Hero */
+        header {
+            padding: 80px 0 60px;
+            border-bottom: 1px solid var(--border);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .role {
+            font-size: 20px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+
+        .intro {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.65;
+        }
+
+        /* Contact Links */
+        .contact-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-hover);
+        }
+
+        .contact-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: var(--accent-hover);
+            transition: width 0.3s ease;
+        }
+
+        .contact-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+        section:nth-child(6) { animation-delay: 0.5s; }
+
+        section:last-child {
+            border-bottom: none;
+            padding-bottom: 80px;
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .skill-category h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: var(--bg-subtle);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            font-weight: 400;
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--bg);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Experience Timeline */
+        .experience-item {
+            margin-bottom: 48px;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            margin-bottom: 16px;
+        }
+
+        .company-role {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .company {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .duration {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .job-title {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .responsibilities li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .achievement-card {
+            background: var(--bg-subtle);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .achievement-number {
+            font-family: 'Fraunces', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .achievement-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Certifications & Education */
+        .cert-list, .project-list {
+            list-style: none;
+        }
+
+        .cert-list li, .project-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .cert-list li::before, .project-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .project-list a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .project-list a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .degree {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .institution {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--bg-subtle);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-hover);
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 32px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .role {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            header {
+                padding: 60px 0 40px;
+            }
+
+            .header-content {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+            .header-text {
+                text-align: left;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 24px;
+            }
+
+            .skills-grid,
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .company-role {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .social-links a {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            .contact-links a::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Dhiraj Rajkumar Surve</h1>
+                    <p class="role">Database Developer | PostgreSQL & Oracle Specialist | Backend & Performance Optimization</p>
+                    <p class="intro">Experienced Database Developer with 5+ years of expertise in database architecture, optimization, and backend engineering. Proven track record in designing high-performance database solutions, automating operational workflows, and delivering scalable systems for enterprise clients across aviation, consulting, finance, insurance and healthcare technology sectors.</p>
+                    <div class="contact-links">
+                        <a href="mailto:surved1998@gmail.com">surved1998@gmail.com</a>
+                        <a href="tel:+919867616960">+91 9867616960</a>
+                        <a href="https://www.linkedin.com/in/dhiraj-surve" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/dhiraj-surve" target="_blank">GitHub</a>
+                        <a href="https://nextgoal365.com" target="_blank">Blog</a>
+                    </div>
+                </div>
+                <img src="profile-photo.jpg" alt="Dhiraj Surve" class="profile-photo">
+            </div>
+        </header>
+
+        <section id="skills">
+            <h2>Core Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">NoSQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Database Development</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PL/SQL</span>
+                        <span class="skill-tag">PL/pgSQL</span>
+                        <span class="skill-tag">SQL Optimization</span>
+                        <span class="skill-tag">Schema Design</span>
+                        <span class="skill-tag">Indexing</span>
+                        <span class="skill-tag">Partitioning</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend & Integration</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">JDBC</span>
+                        <span class="skill-tag">Struts MVC</span>
+                        <span class="skill-tag">JSON</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>DevOps & Automation</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Shell Scripting</span>
+                        <span class="skill-tag">Linux/Unix</span>
+                        <span class="skill-tag">CRON Jobs</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Platforms</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PL/SQL Developer</span>
+                        <span class="skill-tag">pgAdmin</span>
+                        <span class="skill-tag">SQL*Loader</span>
+                        <span class="skill-tag">WinSCP</span>
+                        <span class="skill-tag">PuTTY</span>
+                        <span class="skill-tag">Eclipse</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Web Technologies</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">JSP/AJAX</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="company-role">
+                        <span class="company">Mphasis — Mumbai</span>
+                        <span class="duration">July 2025 – Present</span>
+                    </div>
+                    <div class="job-title">Senior Software Developer (Database & DBA)</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Leading database architecture design and implementation for PostgreSQL environments across 4 enterprise clients, ensuring scalability and optimal performance</li>
+                    <li>Developing and maintaining complex database objects including triggers, views, stored procedures, functions, and sequences to support business-critical applications</li>
+                    <li>Managing production database operations including CRON job scheduling, automated monitoring, backup strategies, and disaster recovery protocols</li>
+                    <li>Implementing advanced indexing strategies and query optimization techniques, resulting in significant performance improvements across client databases</li>
+                    <li>Orchestrating large-scale data migrations and data conversion projects with zero downtime, ensuring data integrity and consistency throughout the process</li>
+                    <li>Successfully delivered 2 critical project go-lives on schedule, receiving client appreciation for dedication, technical excellence, and availability during extended hours and weekends</li>
+                    <li>Providing L3 database support, troubleshooting complex production issues, and implementing permanent fixes to prevent recurrence</li>
+                    <li>Collaborating with cross-functional teams to define database standards, best practices, and governance policies for enterprise-wide adoption</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="company-role">
+                        <span class="company">Accelya Solutions India — Mumbai</span>
+                        <span class="duration">January 2024 – June 2025</span>
+                    </div>
+                    <div class="job-title">Analyst II – Service Management</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Automated critical operational workflows through shell scripting, reducing manual monitoring efforts by 40% and significantly improving incident response time</li>
+                    <li>Managed Oracle and PostgreSQL database environments, developing and optimizing PL/SQL and PL/pgSQL components including functions, procedures, triggers, packages, and sequences</li>
+                    <li>Investigated and resolved production database issues using PL/SQL Developer, ensuring minimal downtime and maintaining SLA compliance for airline industry clients</li>
+                    <li>Implemented advanced database optimization techniques including indexing strategies, table partitioning, and query tuning, improving overall database performance and efficiency</li>
+                    <li>Administered Linux system tasks including CRON job management, log monitoring, and system performance analysis to ensure operational stability</li>
+                    <li>Supported enterprise-scale data migration initiatives and developed data visualization dashboards using SQL and Excel for executive decision-making</li>
+                    <li>Conducted root cause analysis (RCA) for critical production incidents, creating detailed documentation and implementing preventive measures</li>
+                    <li>Collaborated with development, QA, and operations teams to analyze production issues, identify root causes, and deploy permanent solutions</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="company-role">
+                        <span class="company">Tata Consultancy Services (TCS) — Mumbai</span>
+                        <span class="duration">March 2021 – January 2024</span>
+                    </div>
+                    <div class="job-title">Software Developer</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Engineered and optimized PostgreSQL database solutions including functions, procedures, triggers, sequences, tables, views, and indexes, achieving 30% performance improvement through dynamic SQL query optimization</li>
+                    <li>Led strategic client engagements to gather business requirements and translate them into technical specifications, reducing customer effort by 30% and significantly improving client satisfaction scores</li>
+                    <li>Developed full-stack web applications using Java, JSP, HTML, CSS, JavaScript, AJAX, and jQuery on the frontend, with Struts-2 MVC, Hibernate, and JDBC powering backend database integration</li>
+                    <li>Enhanced database performance through comprehensive tuning initiatives, query optimization, and data modeling, reducing redundancy by 30% and improving application response times by 40%</li>
+                    <li>Managed Linux-based database operations including CRON jobs, database dumps, replica creation, test environment setup, and data masking for security compliance</li>
+                    <li>Provided L2/L3 technical support for database and application issues, maintaining high system uptime and reliability for production environments</li>
+                    <li>Executed data migration projects, normalization activities, and backup/recovery operations to ensure data integrity and business continuity</li>
+                    <li>Owned unit and regression testing across development, testing, and production environments, ensuring code quality and system stability</li>
+                    <li>Produced comprehensive technical documentation including design documents, data dictionaries, RCA reports, and project estimation documents</li>
+                    <li>Mentored junior team members, conducted knowledge transfer sessions, and fostered team growth in an Agile development environment</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Key Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">40%</div>
+                    <div class="achievement-text">Reduction in manual monitoring through automation and shell scripting</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">30%</div>
+                    <div class="achievement-text">Performance boost in database query execution through optimization</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">4</div>
+                    <div class="achievement-text">Enterprise clients managed simultaneously with high satisfaction ratings</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">2</div>
+                    <div class="achievement-text">Critical project go-lives delivered successfully at Mphasis</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications & Education</h2>
+            
+            <h3 style="margin-top: 0;">Certifications</h3>
+            <ul class="cert-list">
+                <li>Associate Cloud Engineer — Google Cloud Platform</li>
+                <li>PostgreSQL for Database Development</li>
+                <li>Oracle PL/SQL Professional</li>
+                <li>Java Programming, Web Design, and Python for Data Science — upGrad</li>
+            </ul>
+
+            <h3 style="margin-top: 32px;">Education</h3>
+            <div class="education-item">
+                <div class="degree">Bachelor of Engineering (Electronics & Telecommunication)</div>
+                <div class="institution">University of Mumbai | Bharati Vidyapeeth College of Engineering | 2020 | CGPA: 7.75</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects & Publications</h2>
+            <ul class="project-list">
+                <li><strong>Fire Fighting Drone Research Paper</strong> — <a href="https://irjet.net/archives/V7/i4/IRJET-V7I4656.pdf" target="_blank">Published in IRJET</a> | Third place at National Level Project Competition (Xhibitech-2020)</li>
+                <li><strong>Blogging Website</strong> — <a href="https://nextgoal365.com" target="_blank">nextgoal365.com</a></li>
+                <li><strong>Open Source Contributions</strong> — Active on <a href="https://github.com/dhiraj-surve" target="_blank">GitHub</a> and competitive coding platforms</li>
+            </ul>
+        </section>
+
+        <section id="awards">
+            <h2>Awards & Recognition</h2>
+            <ul class="cert-list">
+                <li>Performance Feedback Award at TCS for outstanding contribution</li>
+                <li>Client Appreciation at Mphasis for dedication and technical excellence</li>
+                <li>Third Place — National Level Project Competition (Xhibitech-2020)</li>
+                <li>Ideal Student of Konkan Award</li>
+                <li>NMMS & KTS Government Scholarship recipient</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <a href="mailto:surved1998@gmail.com">surved1998@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+919867616960">+91 9867616960</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/dhiraj-surve" target="_blank" title="LinkedIn">in</a>
+                <a href="https://github.com/dhiraj-surve" target="_blank" title="GitHub">gh</a>
+                <a href="https://nextgoal365.com" target="_blank" title="Blog">blog</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div c

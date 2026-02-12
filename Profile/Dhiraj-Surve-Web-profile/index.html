@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dhiraj Surve - Database Developer, Web Developer & Technology Trainer. Learn PostgreSQL, SQL, Web Development & get IT career guidance.">
+    <title>Dhiraj Surve - Database Developer & Technology Trainer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key after setup
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">DS</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#teaching" class="nav-link">Teaching</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Dhiraj Surve</span>
+                    </h1>
+                    <p class="hero-subtitle">Database Developer • Web Developer • Technology Trainer</p>
+                    <p class="hero-description">
+                        I build high-performance database solutions, create modern web applications, 
+                        and mentor aspiring developers to kickstart their IT careers. With 5+ years of 
+                        industry experience, I help students and businesses leverage technology effectively.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Start Learning</a>
+                        <a href="#portfolio" class="btn btn-secondary">View My Work</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>5+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>200+</h3>
+                            <p>Students Trained</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>Projects Worked</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card card-1">
+                        <span class="tech-icon">🗄️</span>
+                        <p>PostgreSQL</p>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="tech-icon">💻</span>
+                        <p>Web Dev</p>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span class="tech-icon">🎓</span>
+                        <p>Training</p>
+                    </div>
+                    <div class="profile-circle">
+                        <img src="images/profile.jpg" alt="Dhiraj Surve" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services & Projects Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services & <span class="gradient-text">Expertise</span></h2>
+                <p class="section-subtitle">Professional solutions for businesses and individuals</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="zoom-in">
+                    <div class="service-number">01</div>
+                    <h3>Website Development</h3>
+                    <p>Custom websites for small businesses, startups, and personal brands. Responsive, fast, and SEO-optimized.</p>
+                    <ul>
+                        <li>Business Websites</li>
+                        <li>Portfolio Sites</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Landing Pages</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-number">02</div>
+                    <h3>Database Solutions</h3>
+                    <p>Database design, optimization, migration, and administration for reliable data management.</p>
+                    <ul>
+                        <li>Database Design & Modeling</li>
+                        <li>Performance Optimization</li>
+                        <li>Data Migration</li>
+                        <li>Database Administration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-number">03</div>
+                    <h3>Technical Training</h3>
+                    <p>One-on-one coaching, batch classes, and corporate training for web development and databases.</p>
+                    <ul>
+                        <li>Individual Mentoring</li>
+                        <li>Batch Training</li>
+                        <li>Corporate Workshops</li>
+                        <li>Online Courses</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-number">04</div>
+                    <h3>IT Consulting</h3>
+                    <p>Technology consultation for startups and SMEs to choose the right tech stack and architecture.</p>
+                    <ul>
+                        <li>Tech Stack Selection</li>
+                        <li>Architecture Planning</li>
+                        <li>Code Reviews</li>
+                        <li>Performance Audits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Teach Section (MOVED AFTER SERVICES) -->
+    <section class="teaching" id="teaching">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What I <span class="gradient-text">Teach</span></h2>
+                <p class="section-subtitle">Empowering the next generation of tech professionals</p>
+            </div>
+            <div class="teaching-grid">
+                <div class="teaching-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Learn HTML5, CSS3, JavaScript, responsive design, and modern web frameworks. Build real-world projects from scratch.</p>
+                    <ul class="skills-list">
+                        <li>HTML & CSS</li>
+                        <li>JavaScript & jQuery</li>
+                        <li>Responsive Design</li>
+                        <li>Bootstrap & Frameworks</li>
+                    </ul>
+                </div>
+
+                <div class="teaching-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                    </div>
+                    <h3>PostgreSQL & SQL</h3>
+                    <p>Master database design, SQL queries, optimization, and advanced PostgreSQL features for real-world applications.</p>
+                    <ul class="skills-list">
+                        <li>SQL Fundamentals</li>
+                        <li>Database Design</li>
+                        <li>Query Optimization</li>
+                        <li>PL/pgSQL Programming</li>
+                    </ul>
+                </div>
+
+                <div class="teaching-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Database Administration</h3>
+                    <p>Learn MySQL, Oracle PL/SQL, database maintenance, backup strategies, and performance tuning.</p>
+                    <ul class="skills-list">
+                        <li>MySQL Administration</li>
+                        <li>Oracle PL/SQL</li>
+                        <li>Backup & Recovery</li>
+                        <li>Performance Tuning</li>
+                    </ul>
+                </div>
+
+                <div class="teaching-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Linux & Shell Scripting</h3>
+                    <p>Get hands-on with Linux commands, shell scripting, CRON jobs, and system administration basics.</p>
+                    <ul class="skills-list">
+                        <li>Linux Fundamentals</li>
+                        <li>Shell Scripting</li>
+                        <li>CRON Jobs</li>
+                        <li>System Administration</li>
+                    </ul>
+                </div>
+
+                <div class="teaching-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Interview Preparation</h3>
+                    <p>Get job-ready with technical interview prep, resume building, and soft skills development for IT careers.</p>
+                    <ul class="skills-list">
+                        <li>Technical Interviews</li>
+                        <li>Resume Building</li>
+                        <li>Mock Interviews</li>
+                        <li>Career Guidance</li>
+                    </ul>
+                </div>
+
+                <div class="teaching-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Full-Stack Basics</h3>
+                    <p>Bridge frontend and backend with Java, Hibernate, MVC patterns, and database integration.</p>
+                    <ul class="skills-list">
+                        <li>Java Fundamentals</li>
+                        <li>Hibernate & JDBC</li>
+                        <li>MVC Architecture</li>
+                        <li>API Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Formats Section -->
+    <section class="training-formats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Training <span class="gradient-text">Formats</span></h2>
+                <p class="section-subtitle">Choose the learning format that suits you best</p>
+            </div>
+            <div class="formats-grid">
+                <div class="format-card" data-aos="flip-left">
+                    <div class="format-icon">👤</div>
+                    <h3>1-on-1 Mentoring</h3>
+                    <p>Personalized attention and customized learning path based on your goals and skill level.</p>
+                    <div class="format-features">
+                        <span>✓ Flexible Schedule</span>
+                        <span>✓ Customized Curriculum</span>
+                        <span>✓ Direct Q&A</span>
+                    </div>
+                    <a href="#contact" class="format-btn">Book Session</a>
+                </div>
+
+                <div class="format-card featured" data-aos="flip-left" data-aos-delay="100">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="format-icon">👥</div>
+                    <h3>Batch Classes</h3>
+                    <p>Learn with peers in small groups (5-10 students). Collaborative learning with structured curriculum.</p>
+                    <div class="format-features">
+                        <span>✓ Peer Learning</span>
+                        <span>✓ Cost Effective</span>
+                        <span>✓ Group Projects</span>
+                    </div>
+                    <a href="#contact" class="format-btn">Join Batch</a>
+                </div>
+
+                <div class="format-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="format-icon">🏢</div>
+                    <h3>Corporate Training</h3>
+                    <p>Customized workshops and training programs for teams and organizations.</p>
+                    <div class="format-features">
+                        <span>✓ Team Building</span>
+                        <span>✓ On-site/Remote</span>
+                        <span>✓ Certificate</span>
+                    </div>
+                    <a href="#contact" class="format-btn">Inquire Now</a>
+                </div>
+
+                <div class="format-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="format-icon">🎥</div>
+                    <h3>Weekend Workshops</h3>
+                    <p>Intensive weekend sessions on specific topics. Perfect for working professionals.</p>
+                    <div class="format-features">
+                        <span>✓ Weekend Batches</span>
+                        <span>✓ Hands-on Labs</span>
+                        <span>✓ Real Projects</span>
+                    </div>
+                    <a href="#contact" class="format-btn">View Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle">Some of my recent work and creations</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+                <button class="filter-btn" data-filter="training">Training</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="images/project1.jpg" alt="E-commerce Website">
+                        <div class="portfolio-overlay">
+                            <h3>E-commerce Platform</h3>
+                            <p>Full-stack online store with payment integration</p>
+                            <div class="portfolio-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <a href="#" class="portfolio-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="database">
+                    <div class="portfolio-image">
+                        <img src="images/project2.jpg" alt="Database Optimization">
+                        <div class="portfolio-overlay">
+                            <h3>Database Optimization</h3>
+                            <p>40% performance improvement for aviation client</p>
+                            <div class="portfolio-tags">
+                                <span>PostgreSQL</span>
+                                <span>Indexing</span>
+                                <span>Query Tuning</span>
+                            </div>
+                            <a href="#" class="portfolio-link">View Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="images/project3.jpg" alt="Business Website">
+                        <div class="portfolio-overlay">
+                            <h3>Local Business Website</h3>
+                            <p>Responsive website for Mumbai-based restaurant</p>
+                            <div class="portfolio-tags">
+                                <span>WordPress</span>
+                                <span>Responsive</span>
+                                <span>SEO</span>
+                            </div>
+                            <a href="#" class="portfolio-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="training">
+                    <div class="portfolio-image">
+                        <img src="images/project4.jpg" alt="Training Program">
+                        <div class="portfolio-overlay">
+                            <h3>SQL Bootcamp Course</h3>
+                            <p>Comprehensive PostgreSQL training for 50+ students</p>
+                            <div class="portfolio-tags">
+                                <span>PostgreSQL</span>
+                                <span>SQL</span>
+                                <span>Training</span>
+                            </div>
+                            <a href="#" class="portfolio-link">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="database">
+                    <div class="portfolio-image">
+                        <img src="images/project5.jpg" alt="Data Migration">
+                        <div class="portfolio-overlay">
+                            <h3>Enterprise Data Migration</h3>
+                            <p>Zero-downtime migration for healthcare client</p>
+                            <div class="portfolio-tags">
+                                <span>Migration</span>
+                                <span>Oracle</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <a href="#" class="portfolio-link">View Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="images/project6.jpg" alt="Portfolio Website">
+                        <div class="portfolio-overlay">
+                            <h3>Personal Portfolio</h3>
+                            <p>Modern portfolio website for a UI/UX designer</p>
+                            <div class="portfolio-tags">
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>Animations</span>
+                            </div>
+                            <a href="#" class="portfolio-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Student and Client <span class="gradient-text">Success Stories</span></h2>
+                <p class="section-subtitle">What my students and clients say</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        Dhiraj's PostgreSQL training was excellent! His real-world examples and hands-on approach 
+                        helped me land my first job as a database developer. Highly recommended for beginners!
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="images/student1.jpg" alt="Priya Sharma">
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <p>Database Developer at TCS</p>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        I hired Dhiraj for my restaurant's website. He understood my requirements perfectly and 
+                        delivered a beautiful, mobile-friendly site. My online orders increased by 40%!
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="images/client1.jpg" alt="Rajesh Patel">
+                        <div>
+                            <h4>Rajesh Patel</h4>
+                            <p>Owner, Spice Garden Restaurant</p>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        The web development course was exactly what I needed. Dhiraj's teaching style is clear, 
+                        patient, and practical. I can now build websites confidently!
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="images/student2.jpg" alt="Amit Kumar">
+                        <div>
+                            <h4>Amit Kumar</h4>
+                            <p>Frontend Developer at Infosys</p>
+                        </div>
+                    </div>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" id="prevBtn">‹</button>
+                <div class="slider-dots" id="sliderDots"></div>
+                <button class="slider-btn next" id="nextBtn">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your IT Journey?</h2>
+                <p>Whether you're a beginner looking to break into tech or a business seeking professional web solutions, 
+                    I'm here to help you succeed.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary btn-large">Book a Free Consultation</a>
+                    <a href="https://wa.me/919967603151" class="btn btn-secondary btn-large" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        WhatsApp Me
+                    </a>
+                </div>
+                <div class="cta-stats">
+                    <div class="cta-stat">
+                        <strong>100% Job Support</strong>
+                        <span>For Students</span>
+                    </div>
+                    <div class="cta-stat">
+                        <strong>Flexible Timings</strong>
+                        <span>Your Schedule</span>
+                    </div>
+                    <div class="cta-stat">
+                        <strong>Live Projects</strong>
+                        <span>Practical Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle">Let's discuss how I can help you achieve your goals</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>Email</h3>
+                        <a href="mailto:surved1998@gmail.com">surved1998@gmail.com</a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <h3>Phone / WhatsApp</h3>
+                        <a href="tel:+919967603151">+91 9967603151</a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Mumbai, Maharashtra, India</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/dhiraj-surve" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/dhiraj-surve" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                        </a>
+                        <a href="https://nextgoal365.com" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name *</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email Address *</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone">
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="">Select Service *</option>
+                            <option value="training">Training / Mentoring</option>
+                            <option value="web">Website Development</option>
+                            <option value="database">Database Services</option>
+                            <option value="consulting">IT Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="service">Service Interested In *</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Your Message *</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    <p class="form-note">* Required fields. Your message will be sent via WhatsApp, email, and saved securely.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Dhiraj Surve</h3>
+                    <p>Empowering developers and businesses with cutting-edge technology solutions and training.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#teaching">What I Teach</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Database Solutions</a></li>
+                        <li><a href="#services">Technical Training</a></li>
+                        <li><a href="#services">IT Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Mumbai, India</li>
+                        <li><a href="mailto:surved1998@gmail.com">surved1998@gmail.com</a></li>
+                        <li><a href="tel:+919967603151">+91 9967603151</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dhiraj Surve. All rights reserved.</p>
+                <p>Built with ❤️ in Mumbai</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

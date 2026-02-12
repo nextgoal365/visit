@@ -1,0 +1,250 @@
+═══════════════════════════════════════════════════════════
+  QUICK CUSTOMIZATION CHECKLIST
+  For Each New Shop (Complete in 1-2 Hours)
+═══════════════════════════════════════════════════════════
+
+STEP 1: GATHER CLIENT INFORMATION
+═══════════════════════════════════════════════════════════
+□ Shop Name: _______________________________________
+□ Owner Name: _______________________________________
+□ Phone Number: +91 _________________________________
+□ Email: ____________________________________________
+□ Address: __________________________________________
+   _________________________________________________
+   Pincode: ________________________________________
+□ Business Hours: ___________________________________
+□ Years in Business: ________________________________
+□ Shop Photos: Collected? □ Yes □ No
+□ Logo: Available? □ Yes □ No
+
+
+STEP 2: FILE SETUP
+═══════════════════════════════════════════════════════════
+□ Create new folder: /shop-name/
+□ Copy all files from template
+□ Rename folder appropriately
+
+
+STEP 3: UPDATE ALL HTML FILES
+═══════════════════════════════════════════════════════════
+
+A. PHONE NUMBERS (Find & Replace in ALL files)
+□ Replace: +919876543210 → Client's number
+□ Replace: tel:+919876543210 → tel:+91XXXXXXXXXX
+□ Replace: https://wa.me/919876543210 → https://wa.me/91XX
+
+B. SHOP NAME (Find & Replace in ALL files)
+□ Replace: Expert IT Solutions → Client's shop name
+□ Update: <title> tags
+□ Update: meta descriptions
+
+C. LOCATION (Find & Replace in ALL files)
+□ Replace: Bhandup West, Mumbai → Client's area
+□ Update: pincode
+□ Update: landmarks
+
+D. EMAIL (Find & Replace in ALL files)
+□ Replace: info@expertitsolutions.com → Client email
+
+
+STEP 4: INDEX.HTML CUSTOMIZATION
+═══════════════════════════════════════════════════════════
+
+A. HERO SECTION
+□ Update shop name
+□ Update tagline/slogan
+□ Update area name
+□ Update description
+
+B. SERVICES SECTION (Replace 6 service cards)
+Service 1: ___________________________________________
+Service 2: ___________________________________________
+Service 3: ___________________________________________
+Service 4: ___________________________________________
+Service 5: ___________________________________________
+Service 6: ___________________________________________
+
+□ Change service names
+□ Update service descriptions
+□ Update service features/bullet points
+□ Change Font Awesome icons
+
+C. WHY CHOOSE US
+□ Update feature cards (keep 6 or customize)
+□ Update feature descriptions
+
+D. TESTIMONIALS
+□ Add 3 real customer reviews (if available)
+□ OR keep generic with shop area names
+
+
+STEP 5: ABOUT.HTML CUSTOMIZATION
+═══════════════════════════════════════════════════════════
+□ Update company introduction
+□ Update years of experience
+□ Update customer count
+□ Update milestone timeline:
+   Year 1: _________________ Event: _________________
+   Year 2: _________________ Event: _________________
+   Year 3: _________________ Event: _________________
+□ Update statistics (customers, repairs, etc.)
+□ Customize "Why Trust Us" section
+
+
+STEP 6: CONTACT.HTML CUSTOMIZATION
+═══════════════════════════════════════════════════════════
+□ Update complete address with:
+   - Shop number
+   - Building/Complex name
+   - Street/Road name
+   - Landmark
+   - Area, City - Pincode
+□ Update business hours
+□ Update phone numbers (mobile + landline if any)
+□ Update email addresses
+□ Update Google Maps:
+   - Get shop's Google Maps location
+   - Copy embed code
+   - Replace iframe src
+□ Update service areas list
+
+
+STEP 7: IMAGES
+═══════════════════════════════════════════════════════════
+□ Logo (images/logo.png) - 200x60px
+□ Shop photo (images/about-shop.jpg) - 500x400px
+□ Team photo (images/team.jpg) - 500x400px
+□ Additional photos (optional)
+
+Image Notes:
+- Compress images before upload
+- Use JPG for photos, PNG for logo
+- Maximum 200KB per image
+
+
+STEP 8: COLORS & BRANDING (style.css)
+═══════════════════════════════════════════════════════════
+□ Primary Color: #____________________
+□ Secondary Color: #____________________
+□ Accent Color: #____________________
+
+Shop Type Color Suggestions:
+- Pan Shop: #FF5722 (Red/Orange)
+- Mobile Shop: #2196F3 (Blue)
+- Medical Store: #4CAF50 (Green)
+- Tailoring: #9C27B0 (Purple)
+- Grocery: #8BC34A (Light Green)
+- Electronics: #607D8B (Blue Gray)
+
+
+STEP 9: TESTING
+═══════════════════════════════════════════════════════════
+□ Click all phone links - do they work?
+□ Click WhatsApp links - do they open correctly?
+□ Test mobile menu (hamburger icon)
+□ Check all images load
+□ Test contact form submission
+□ Verify Google Maps loads and shows correct location
+□ Test on mobile phone (actual device)
+□ Test on tablet
+□ Test on desktop
+□ Check in different browsers:
+   □ Chrome
+   □ Firefox
+   □ Safari (if available)
+□ No placeholder text remaining?
+□ All navigation links work?
+
+
+STEP 10: FINAL REVIEW
+═══════════════════════════════════════════════════════════
+□ Proofread all text for typos
+□ Verify all contact information is correct
+□ Check grammar and spelling
+□ Ensure professional appearance
+□ Remove any "Lorem Ipsum" or placeholder text
+□ All social media links (even if set to #)
+□ Footer copyright year is current
+
+
+STEP 11: DEPLOYMENT
+═══════════════════════════════════════════════════════════
+Hosting Option: □ GitHub Pages □ Netlify □ Vercel □ Other
+
+□ Create account on chosen platform
+□ Upload website files
+□ Test live website
+□ Share link with client
+□ Collect payment: ₹500
+
+
+STEP 12: CLIENT HANDOVER
+═══════════════════════════════════════════════════════════
+□ Provide website URL
+□ Show them how to navigate
+□ Explain contact features
+□ Provide admin access (if applicable)
+□ Give brief tutorial on updates
+□ Collect feedback
+□ Request testimonial
+□ Take screenshot for portfolio
+
+
+═══════════════════════════════════════════════════════════
+TIME TRACKING
+═══════════════════════════════════════════════════════════
+Start Time: __________
+End Time: __________
+Total Time: __________ hours
+
+Target: 1-2 hours per website
+With practice, aim for: 45-60 minutes
+
+
+═══════════════════════════════════════════════════════════
+COMMON ISSUES & SOLUTIONS
+═══════════════════════════════════════════════════════════
+
+Issue: Images not loading
+Solution: Check file names match exactly (case-sensitive)
+
+Issue: WhatsApp not opening
+Solution: Ensure format is https://wa.me/91XXXXXXXXXX
+
+Issue: Mobile menu not working
+Solution: Check script.js is linked correctly
+
+Issue: Google Maps not showing
+Solution: Get new embed code from Google Maps
+
+Issue: Contact form not submitting
+Solution: Check console (F12) for errors
+
+
+═══════════════════════════════════════════════════════════
+UPSELL OPPORTUNITIES
+═══════════════════════════════════════════════════════════
+□ Custom domain (+₹300)
+□ Logo design (+₹300)
+□ Professional photography (+₹200)
+□ Monthly maintenance (+₹200/month)
+□ Google My Business setup (+₹500)
+□ Social media integration (+₹200)
+
+
+═══════════════════════════════════════════════════════════
+NOTES
+═══════════════════════════════════════════════════════════
+_________________________________________________________
+_________________________________________________________
+_________________________________________________________
+_________________________________________________________
+_________________________________________________________
+
+
+═══════════════════════════════════════════════════════════
+✓ COMPLETED AND DELIVERED
+═══════════════════════════════════════════════════════════
+Date: ______________
+Client Signature: ______________
+Payment Received: ₹ ____________
