@@ -2,22 +2,10 @@
 // CONFIGURATION - UPDATE THESE!
 // ===========================
 
-// EmailJS Configuration (Get from https://emailjs.com after signup)
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';  // Replace after EmailJS setup
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace after EmailJS setup  
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';   // Replace after EmailJS setup
-
-// Google Forms Configuration (Get from your Google Form)
-const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse'; // Replace with your form URL
-
-// Google Forms Field IDs (Get from your form - see SETUP-GUIDE.md)
-const GOOGLE_FORM_FIELDS = {
-    name: 'entry.YOUR_NAME_ID',        // Replace with actual entry ID
-    email: 'entry.YOUR_EMAIL_ID',      // Replace with actual entry ID
-    phone: 'entry.YOUR_PHONE_ID',      // Replace with actual entry ID
-    service: 'entry.YOUR_SERVICE_ID',  // Replace with actual entry ID
-    message: 'entry.YOUR_MESSAGE_ID'   // Replace with actual entry ID
-};
+// Google Apps Script Web App URL
+// ⚠️ REPLACE THIS after following GOOGLE-SHEET-SETUP.md (5-minute setup)
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxhYJknug35gErMtJblPb8JhwVmVKxn7w-qFmo66SugCcz4OVXlE0w6Zu5xaLLEsNFrYQ/exec';
+// Example: 'https://script.google.com/macros/s/AKfycbXXXXX/exec'
 
 // WhatsApp Configuration
 const WHATSAPP_NUMBER = '919967603151'; // Your WhatsApp number with country code (no + sign)
@@ -243,8 +231,7 @@ contactForm.addEventListener('submit', async (e) => {
     let successCount = 0;
     const results = {
         whatsapp: false,
-        googleForms: false,
-        email: false
+        googleForms: false
     };
     
     // ===========================
@@ -257,81 +244,48 @@ contactForm.addEventListener('submit', async (e) => {
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`, '_blank');
         results.whatsapp = true;
         successCount++;
-        console.log('✅ 1/3: WhatsApp message prepared');
+        console.log('✅ 1/2: WhatsApp message prepared');
     } catch (error) {
         console.error('❌ WhatsApp Error:', error);
     }
     
     // ===========================
-    // 2. SEND TO GOOGLE FORMS/SHEETS
+    // 2. SAVE TO GOOGLE SHEETS (via Apps Script — no CORS issues)
     // ===========================
     try {
-        // Check if Google Forms is configured
-        if (!GOOGLE_FORM_ACTION_URL.includes('YOUR_FORM_ID')) {
-            const formData = new FormData();
-            formData.append(GOOGLE_FORM_FIELDS.name, name);
-            formData.append(GOOGLE_FORM_FIELDS.email, email);
-            formData.append(GOOGLE_FORM_FIELDS.phone, phone);
-            formData.append(GOOGLE_FORM_FIELDS.service, service);
-            formData.append(GOOGLE_FORM_FIELDS.message, message);
-            
-            // Send to Google Forms (no-cors mode for cross-origin)
-            await fetch(GOOGLE_FORM_ACTION_URL, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            });
-            
-            results.googleForms = true;
-            successCount++;
-            console.log('✅ 2/3: Data saved to Google Sheets');
-        } else {
-            console.warn('⚠️  2/3: Google Forms not configured yet. See SETUP-GUIDE.md');
-        }
-    } catch (error) {
-        console.error('❌ Google Forms Error:', error);
-        // Still count as potential success since no-cors doesn't allow error checking
-        results.googleForms = true;
-        successCount++;
-    }
-    
-    // ===========================
-    // 3. SEND EMAIL VIA EMAILJS
-    // ===========================
-    try {
-        // Check if EmailJS is loaded and configured
-        if (typeof emailjs !== 'undefined' && EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID') {
-            const templateParams = {
-                from_name: name,
-                from_email: email,
-                phone: phone,
-                service: service,
-                message: message,
-                to_email: YOUR_EMAIL
+        if (GOOGLE_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+            const payload = {
+                name:      name,
+                email:     email,
+                phone:     phone,
+                service:   service,
+                message:   message,
+                timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
             };
-            
-            await emailjs.send(
-                EMAILJS_SERVICE_ID,
-                EMAILJS_TEMPLATE_ID,
-                templateParams,
-                EMAILJS_PUBLIC_KEY
-            );
-            
-            results.email = true;
-            successCount++;
-            console.log('✅ 3/3: Email sent successfully');
-        } else {
-            if (typeof emailjs === 'undefined') {
-                console.warn('⚠️  3/3: EmailJS library not loaded');
+
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method:  'POST',
+                headers: { 'Content-Type': 'text/plain' }, // text/plain avoids CORS preflight
+                body:    JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (result.status === 'success') {
+                results.googleForms = true;
+                successCount++;
+                console.log('✅ 2/2: Data saved to Google Sheets!');
             } else {
-                console.warn('⚠️  3/3: EmailJS not configured yet. See SETUP-GUIDE.md');
+                throw new Error(result.message || 'Unknown error from Apps Script');
             }
+        } else {
+            console.warn('⚠️  2/2: Google Sheets not configured. Follow GOOGLE-SHEET-SETUP.md');
         }
     } catch (error) {
-        console.error('❌ Email Error:', error);
-        console.error('Error details:', error.text || error.message);
+        console.error('❌ Google Sheets Error:', error.message);
     }
     
+
     // ===========================
     // SHOW SUCCESS MESSAGE
     // ===========================
@@ -345,12 +299,11 @@ contactForm.addEventListener('submit', async (e) => {
         // Show success message based on what worked
         let successMessage = '🎉 Thank you for contacting me!\n\n';
         
-        if (successCount === 3) {
+        if (successCount >= 2) {
             successMessage += '✅ WhatsApp message opened\n';
-            successMessage += '✅ Data saved to records\n';
-            successMessage += '✅ Email sent successfully\n';
+            successMessage += '✅ Data saved to Google Sheets\n';
             successMessage += '\nI will get back to you soon!';
-        } else if (successCount === 2) {
+        } else if (successCount >= 1) {
             successMessage += '✅ WhatsApp message opened\n';
             successMessage += '✅ Data saved to records\n';
             if (!results.email) {
@@ -361,10 +314,7 @@ contactForm.addEventListener('submit', async (e) => {
             successMessage += '✅ WhatsApp message prepared!\n';
             successMessage += '\nPlease click "Send" in WhatsApp to complete.\n';
             if (!results.googleForms) {
-                successMessage += '⚠️  Auto-save: Setup pending\n';
-            }
-            if (!results.email) {
-                successMessage += '⚠️  Email: Setup pending\n';
+                successMessage += '⚠️  Google Sheets: Setup pending\n';
             }
         } else {
             successMessage = '⚠️  Oops! Something went wrong.\n\nPlease contact me directly:\n📱 +91 9967603151\n📧 surved1998@gmail.com';
@@ -374,11 +324,9 @@ contactForm.addEventListener('submit', async (e) => {
         
         // Log completion summary
         console.log('\n📊 CONTACT FORM SUBMISSION SUMMARY:');
-        console.log(`   Total Success: ${successCount}/3`);
+        console.log(`   Total Success: ${successCount}/2`);
         console.log(`   WhatsApp: ${results.whatsapp ? '✅' : '❌'}`);
-        console.log(`   Google Forms: ${results.googleForms ? '✅' : '⚠️  (Not configured)'}`);
-        console.log(`   Email: ${results.email ? '✅' : '⚠️  (Not configured)'}`);
-        console.log('\n💡 To enable all features, see SETUP-GUIDE.md\n');
+        console.log(`   Google Sheets: ${results.googleForms ? '✅' : '❌'}`);
     }, 1000);
 });
 
@@ -523,11 +471,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('\n📋 Contact Form Configuration Status:');
     console.log('   ✅ WhatsApp: Ready');
-    console.log('   ' + (GOOGLE_FORM_ACTION_URL.includes('YOUR_FORM_ID') ? '⚠️  ' : '✅ ') + 'Google Forms: ' + (GOOGLE_FORM_ACTION_URL.includes('YOUR_FORM_ID') ? 'Not configured' : 'Ready'));
-    console.log('   ' + (EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ? '⚠️  ' : '✅ ') + 'EmailJS: ' + (EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ? 'Not configured' : 'Ready'));
+    console.log('   ' + (GOOGLE_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE' ? '⚠️  ' : '✅ ') + 'Google Sheets: ' + (GOOGLE_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE' ? 'Not configured — follow GOOGLE-SHEET-SETUP.md' : 'Ready'));
     
-    if (GOOGLE_FORM_ACTION_URL.includes('YOUR_FORM_ID') || EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID') {
-        console.log('\n💡 To enable all features, check SETUP-GUIDE.md');
+    if (GOOGLE_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+        console.log('\n💡 To enable Google Sheets, follow GOOGLE-SHEET-SETUP.md');
     }
     
     // Initialize sections animation
