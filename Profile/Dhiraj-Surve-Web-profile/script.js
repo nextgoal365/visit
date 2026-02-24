@@ -218,10 +218,75 @@ contactForm.addEventListener('submit', async (e) => {
     // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value || 'Not provided';
+	const phoneRaw = document.getElementById('phone').value || 'Not provided';
+	//const phone = phoneRaw.replace(/[\s\-\+\(\)]/g, ''); 
     const service = document.getElementById('service').value;
     const message = document.getElementById('message').value;
     
+	 // ===========================
+    // VALIDATION
+    // ===========================
+	
+	// 1. Email Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('❌ Invalid Email Address\n\nPlease enter a valid email like:\nexample@gmail.com');
+        document.getElementById('email').focus();
+        return;
+    }
+	
+	// 2. Phone Validation (if provided)
+    let phone = 'Not provided';
+    if (phoneRaw) {
+        // Clean phone: remove spaces, +, -, ( ) brackets
+        const phoneDigits = phoneRaw.replace(/[\s\-\+\(\)]/g, '');
+        
+        // Check if it's all digits
+        if (!/^\d+$/.test(phoneDigits)) {
+            alert('❌ Invalid Phone Number\n\nPhone should contain only numbers.\nSpaces and +91 are OK but letters are not allowed.');
+            document.getElementById('phone').focus();
+            return;
+        }
+        
+        // Check minimum length (10 digits)
+        if (phoneDigits.length < 10) {
+            alert('❌ Phone Number Too Short\n\nPhone must be at least 10 digits.\nYou entered: ' + phoneDigits.length + ' digits');
+            document.getElementById('phone').focus();
+            return;
+        }
+        
+        // Check maximum length (15 digits - international standard)
+        if (phoneDigits.length > 15) {
+            alert('❌ Phone Number Too Long\n\nPhone cannot exceed 15 digits.\nYou entered: ' + phoneDigits.length + ' digits');
+            document.getElementById('phone').focus();
+            return;
+        }
+        
+        phone = phoneDigits;  // Use cleaned digits
+    }
+	
+    // 3. Name Validation
+    if (name.length < 2) {
+        alert('❌ Invalid Name\n\nPlease enter your full name (at least 2 characters).');
+        document.getElementById('name').focus();
+        return;
+    }
+    
+    // 4. Service Validation
+    if (!service || service === '') {
+        alert('❌ Service Not Selected\n\nPlease select the service you are interested in.');
+        document.getElementById('service').focus();
+        return;
+    }
+    
+    // 5. Message Validation
+    if (message.length < 5) {
+        alert('❌ Message Too Short\n\nPlease provide more details (at least 10 characters).');
+        document.getElementById('message').focus();
+        return;
+    }
+	// *******ALL VALIDATIONS PASSED - Continue with form submission
+	
     // Show loading state
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
@@ -317,7 +382,7 @@ contactForm.addEventListener('submit', async (e) => {
                 successMessage += '⚠️  Google Sheets: Setup pending\n';
             }
         } else {
-            successMessage = '⚠️  Oops! Something went wrong.\n\nPlease contact me directly:\n📱 +91 9967603151\n📧 surved1998@gmail.com';
+            successMessage = '⚠️  Oops! Something went wrong.\n\nPlease contact me directly:\n📱 +91 9967603151\n📧 survedhiraj1998@gmail.com';
         }
         
         alert(successMessage);
