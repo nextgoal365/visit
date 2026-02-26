@@ -1405,3 +1405,32 @@ body {
         padding: 2rem;
     }
 }
+
+
+
+
+/* Powered By Section */
+.powered-by {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.powered-by p {
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+.powered-by a {
+    color: #14b8a6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.powered-by a:hover {
+    color: #0d9488;
+    text-decoration: underline;
+}
