@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Sayali Terse - Resin Artist | Handmade Resin Art & Workshops in Mumbai</title>
+    <meta name="description" content="Sayali Terse is a self-taught resin artist in Mumbai creating unique handmade resin art, charcoal art, and canvas paintings. Join beginner-friendly workshops or order custom art pieces.">
+    <meta name="keywords" content="resin art Mumbai, resin artist, handmade resin art, resin workshops, custom resin art, Sayali Terse, resin classes Mumbai">
+    <meta name="author" content="Sayali Terse">
+    
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content="Sayali Terse - Resin Artist | Handmade Art & Workshops">
+    <meta property="og:description" content="Self-taught resin artist creating unique handmade art pieces and teaching beginner-friendly workshops in Mumbai">
+    <meta property="og:image" content="images/profile.jpg">
+    <meta property="og:url" content="https://sayaliterse.github.io">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sayali Terse - Resin Artist">
+    <meta name="twitter:description" content="Unique handmade resin art & creative workshops in Mumbai">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Sayali Terse</div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#workshops" class="nav-link">Workshops</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos>
+            <h1 class="hero-title">Sayali Terse</h1>
+            <p class="hero-subtitle">Unique Handmade Resin Art & Creative Workshops</p>
+            <p class="hero-description">Self-taught artist creating magical resin pieces in Mumbai</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Order Custom Art</a>
+                <a href="#workshops" class="btn btn-secondary">Join Workshop</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos>About Me</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos>
+                    <img src="images/profile.jpg" alt="Sayali Terse - Resin Artist">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="about-text" data-aos>
+                    <h3>Hello! I'm Sayali</h3>
+                    <p>I'm a self-taught artist based in Mumbai, passionate about creating beautiful resin art pieces that bring joy and uniqueness to your spaces.</p>
+                    
+                    <p>My journey into the world of resin art started with curiosity and experimentation. Today, I create stunning resin art pieces, charcoal art, canvas paintings, and love exploring various crafts and DIY projects.</p>
+                    
+                    <p>What drives me is the opportunity to teach and share my knowledge with beginners. Through my workshops, I help aspiring artists discover the magic of resin art in the easiest and most fun way possible.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Custom Pieces</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Workshops</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Happy Students</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills">
+                        <span class="skill-badge">Resin Art</span>
+                        <span class="skill-badge">Charcoal Art</span>
+                        <span class="skill-badge">Canvas Painting</span>
+                        <span class="skill-badge">Crafts & DIY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title" data-aos>Art Gallery</h2>
+            <p class="section-subtitle" data-aos>Explore my handmade resin art creations</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos onclick="openLightbox(0)">
+                    <img src="images/art1.jpg" alt="Resin Art Piece 1">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos onclick="openLightbox(1)">
+                    <img src="images/art2.jpg" alt="Resin Art Piece 2">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos onclick="openLightbox(2)">
+                    <img src="images/art3.jpg" alt="Resin Art Piece 3">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos onclick="openLightbox(3)">
+                    <img src="images/art4.jpg" alt="Resin Art Piece 4">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos onclick="openLightbox(4)">
+                    <img src="images/art5.jpg" alt="Resin Art Piece 5">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos onclick="openLightbox(5)">
+                    <img src="images/art6.jpg" alt="Resin Art Piece 6">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos onclick="openLightbox(6)">
+                    <img src="images/art7.jpg" alt="Resin Art Piece 7">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos onclick="openLightbox(7)">
+                    <img src="images/art8.jpg" alt="Resin Art Piece 8">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <span class="zoom-icon">🔍</span>
+                            <p>View Full Image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="Gallery Image">
+    </div>
+
+    <!-- Workshops Section -->
+    <section class="workshops" id="workshops">
+        <div class="container">
+            <h2 class="section-title" data-aos>Resin Art Workshops</h2>
+            <p class="section-subtitle" data-aos>Learn the art of resin creation from scratch</p>
+            
+            <div class="workshops-content">
+                <div class="workshop-card" data-aos>
+                    <div class="workshop-icon">🎨</div>
+                    <h3>Online Workshops</h3>
+                    <p>Learn resin art from the comfort of your home with live interactive sessions.</p>
+                    <ul class="workshop-features">
+                        <li>✓ Live video sessions</li>
+                        <li>✓ Beginner friendly</li>
+                        <li>✓ Material kit delivered</li>
+                        <li>✓ Lifetime support</li>
+                    </ul>
+                    <div class="workshop-duration">Duration: 2-3 hours</div>
+                </div>
+                
+                <div class="workshop-card workshop-card-featured" data-aos>
+                    <div class="featured-badge">Popular</div>
+                    <div class="workshop-icon">🏠</div>
+                    <h3>Offline Workshops</h3>
+                    <p>Hands-on experience with personalized guidance in Mumbai studio.</p>
+                    <ul class="workshop-features">
+                        <li>✓ In-person training</li>
+                        <li>✓ All materials provided</li>
+                        <li>✓ Small batch (4-6 students)</li>
+                        <li>✓ Take home your creation</li>
+                    </ul>
+                    <div class="workshop-duration">Duration: 1 full day</div>
+                </div>
+                
+                <div class="workshop-card" data-aos>
+                    <div class="workshop-icon">🎓</div>
+                    <h3>Advanced Course</h3>
+                    <p>Master advanced techniques and create professional-level resin art pieces.</p>
+                    <ul class="workshop-features">
+                        <li>✓ Advanced techniques</li>
+                        <li>✓ Multiple projects</li>
+                        <li>✓ Business guidance</li>
+                        <li>✓ Certificate provided</li>
+                    </ul>
+                    <div class="workshop-duration">Duration: 3-day intensive</div>
+                </div>
+            </div>
+            
+            <div class="workshop-cta" data-aos>
+                <h3>What You'll Learn</h3>
+                <div class="learning-points">
+                    <div class="learning-item">
+                        <span class="learning-icon">🎨</span>
+                        <span>Resin basics & safety</span>
+                    </div>
+                    <div class="learning-item">
+                        <span class="learning-icon">✨</span>
+                        <span>Mixing colors & pigments</span>
+                    </div>
+                    <div class="learning-item">
+                        <span class="learning-icon">🖼️</span>
+                        <span>Creating coasters & frames</span>
+                    </div>
+                    <div class="learning-item">
+                        <span class="learning-icon">💎</span>
+                        <span>Jewelry & accessories</span>
+                    </div>
+                    <div class="learning-item">
+                        <span class="learning-icon">🎁</span>
+                        <span>Gift items & decor</span>
+                    </div>
+                    <div class="learning-item">
+                        <span class="learning-icon">🔧</span>
+                        <span>Tools & techniques</span>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary btn-large">Register for Workshop</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media">
+        <div class="container">
+            <h2 class="section-title" data-aos>Follow My Creative Journey</h2>
+            <p class="section-subtitle" data-aos>Stay updated with my latest creations and workshop announcements</p>
+            
+            <div class="social-links" data-aos>
+                <a href="https://www.instagram.com/sayaliterse" target="_blank" class="social-card instagram">
+                    <div class="social-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Instagram</h3>
+                        <p>@sayaliterse</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.youtube.com/@Resin_Empire" target="_blank" class="social-card youtube">
+                    <div class="social-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>YouTube</h3>
+                        <p>Resin Empire</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.facebook.com/sayaliterse" target="_blank" class="social-card facebook">
+                    <div class="social-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>Facebook</h3>
+                        <p>Sayali Terse</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="instagram-cta" data-aos>
+                <p>✨ Checkout more of my latest creations and behind-the-scenes on Instagram ✨</p>
+                <a href="https://www.instagram.com/sayaliterse" target="_blank" class="btn btn-instagram">
+                    Follow on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos>Get In Touch</h2>
+            <p class="section-subtitle" data-aos>Order custom art pieces or register for workshops</p>
+            
+            <div class="contact-content">
+                <!-- Quick Contact Buttons -->
+                <div class="quick-contact" data-aos>
+                    <h3>Quick Contact</h3>
+                    <div class="quick-contact-buttons">
+                        <a href="https://wa.me/917977850875" target="_blank" class="quick-btn whatsapp-btn">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                        <a href="mailto:sayaliterse123@gmail.com" class="quick-btn email-btn">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            Email
+                        </a>
+                        <a href="tel:+917977850875" class="quick-btn call-btn">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper" data-aos>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name *</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="mobile" required>
+                            <label for="mobile">Mobile Number *</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email">
+                            <label for="email">Email Address (Optional)</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="interest" required>
+                                <option value="">Select Your Interest *</option>
+                                <option value="Custom Art Order">Custom Art Order</option>
+                                <option value="Workshop Registration">Workshop Registration</option>
+                                <option value="Bulk Order">Bulk Order</option>
+                                <option value="Collaboration">Collaboration</option>
+                                <option value="Other Inquiry">Other Inquiry</option>
+                            </select>
+                            <label for="interest">I'm Interested In</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required></textarea>
+                            <label for="message">Your Message *</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sayali Terse</h3>
+                    <p>Creating magical resin art pieces and teaching the joy of creativity in Mumbai.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/sayaliterse" target="_blank" aria-label="Instagram">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@Resin_Empire" target="_blank" aria-label="YouTube">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/sayaliterse" target="_blank" aria-label="Facebook">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#gallery">Art Gallery</a></li>
+                        <li><a href="#workshops">Workshops</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>📍 Mumbai, India</li>
+                        <li>📧 sayaliterse123@gmail.com</li>
+                        <li>📱 +91 79778 50875</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sayali Terse. All rights reserved.</p>
+                <div class="powered-by">
+                    <p>This web profile is created and managed by <a href="https://nextgoal365.com" target="_blank">nextgoal365.com</a></p>
+                    <p>Contact for more such services: <a href="mailto:nextgoals365@gmail.com">nextgoals365@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
